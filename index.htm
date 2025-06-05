@@ -1,0 +1,23 @@
+﻿.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #00fff7;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
