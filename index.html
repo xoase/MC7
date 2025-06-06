@@ -1,64 +1,46 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MC7 Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="index.htm" />
-<link rel="stylesheet" href="button.html" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Art Gallery</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <nav class="navbar">
-      <h1 class="logo">MC7</h1>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
 
-    <header class="hero">
-      <h2>Welcome to the Future</h2>
+    <header>
+        <div class="logo">Your Art</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="about" class="section about">
-      <h3>Who Am I?</h3>
-      <p>A code poet and visual voyager. I craft interfaces that shimmer like chrome and hum like circuits. Let's ride the wave of innovation.</p>
-    </section>
+    <main>
+        <section id="gallery">
+            <h2>Featured Artworks</h2>
+            <div class="artwork-grid">
+                <!-- Artwork items will be added here by JavaScript -->
+            </div>
+        </section>
 
-    <section id="projects" class="section projects">
-      <h3>Digital Realms</h3>
-      <div class="card-grid">
-        <div class="card">
-          <h4>Project Aurora</h4>
-          <p>A web portal infused with AI, glowing UI, and seamless UX.</p>
-        </div>
-        <div class="card">
-          <h4>MC7 Vision</h4>
-          <p>Motion meets meaning—next-level editing and cosmic transitions.</p>
-        </div>
-        <div class="card">
-          <h4>NeoTrade Hub</h4>
-          <p>Crypto commerce interface built for speed and transparency.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <h3>Signal Me ⚡</h3>
-      <form action="#" method="POST">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Email" required />
-        <textarea placeholder="Your Message"></textarea>
-        <button type="submit">Transmit</button>
-      </form>
-    </section>
+        <section id="artwork-detail" style="display: none;">
+            <button id="back-to-gallery">Back to Gallery</button>
+            <h2 id="artwork-title"></h2>
+            <img id="artwork-image" src="" alt="">
+            <p id="artwork-description"></p>
+            <p id="artwork-price"></p>
+            <button id="purchase-button">Purchase</button>
+        </section>
+    </main>
 
     <footer>
-      <p>Made with 💻 + 🚀 by AGW — 2025</p>
+        <p>&copy; 2024 Your Art Gallery</p>
     </footer>
-  </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
