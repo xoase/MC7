@@ -1,370 +1,169 @@
+
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MC Sport - Top Tier International Football News</title>
-    <!-- Tailwind CSS CDN for easy styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
-            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-        }
-        /* Custom scrollbar for better aesthetics, especially in the sidebar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #e0e0e0;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #f97316; /* Bright yellow-orange (orange-500) */
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ea580c; /* Darker yellow-orange on hover (orange-600) */
-        }
-        /* Offset for fixed header when smooth scrolling to anchor links */
-        :target::before {
-            content: "";
-            display: block;
-            height: 120px; /* Adjust this value to match your header height + padding */
-            margin-top: -120px; /* Negative margin to pull content up */
-            visibility: hidden;
-        }
-        /* Style to hide elements without affecting layout when using display: none */
-        .hidden-article {
-            display: none;
-        }
-    </style>
+    <title>MATSULLIN - Your Hub for Digital Creations</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="min-h-screen flex flex-col">
-
-    <!-- Message Box -->
-    <div id="message-box" class="fixed top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white px-6 py-3 rounded-lg shadow-xl z-50 transition-all duration-300 opacity-0 transform -translate-y-full">
-        <!-- Message will be inserted here by JavaScript -->
-    </div>
-
-    <!-- Header Section -->
-    <header class="bg-blue-950 text-white p-4 shadow-lg sticky top-0 z-40"> <!-- Dark Blue -->
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <!-- Website Logo/Title with SVG -->
-            <a href="#home-section" class="flex items-center gap-2 mb-2 md:mb-0">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 md:w-10 md:h-10">
-                    <circle cx="24" cy="24" r="24" fill="#f97316"/> <!-- Bright Yellow-Orange Circle Background -->
-                    <!-- Stylized 'M' path in white -->
-                    <path d="M14 34L20 14L24 26L28 14L34 34H14Z" fill="white"/>
-                </svg>
-                <div class="flex items-baseline">
-                    <span class="text-4xl md:text-3xl font-bold tracking-tight text-orange-400">MC</span>
-                    <span class="text-4xl md:text-3xl font-bold tracking-tight text-white ml-1">Sport</span>
-                </div>
-            </a>
-            <!-- Tagline for Football Focus -->
-            <p class="text-sm text-blue-200">Your Source for Top-Tier International Football News</p> <!-- Lighter blue for contrast -->
-            <!-- Search Bar -->
-            <div class="relative w-full md:w-1/3">
-                <input type="text" id="search-input" placeholder="Search news, teams, players..." class="w-full py-2 pl-4 pr-10 rounded-full bg-blue-800 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-orange-500"> <!-- Darker blue for input, yellow-orange ring -->
-                <button onclick="performSearch()" class="absolute right-3 top-1/2 -translate-y-1/2 text-blue-300 hover:text-orange-400"> <!-- Yellow-orange hover -->
-                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                </button>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">MATSULLIN</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="free-downloads.html">Free Downloads</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="my-account.html">Account</a>
+                <a href="cart.html" class="cart-icon">Cart (<span id="cart-count">0</span>)</a>
+                <input type="text" placeholder="Search...">
             </div>
         </div>
     </header>
 
-    <!-- Navigation Bar -->
-    <nav class="bg-blue-900 text-white shadow-md sticky top-[80px] md:top-[72px] z-30"> <!-- Darker Blue -->
-        <div class="container mx-auto p-4">
-            <ul class="flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-8">
-                <!-- Links with yellow-orange hover -->
-                <li><a href="#home-section" class="hover:text-orange-400 transition duration-300 font-semibold rounded-md p-2">Home</a></li>
-                <li><a href="#premier-league-section" class="hover:text-orange-400 transition duration-300 font-semibold rounded-md p-2">Premier League</a></li>
-                <li><a href="#la-liga-section" class="hover:text-orange-400 transition duration-300 font-semibold rounded-md p-2">La Liga</a></li>
-                <li><a href="#champions-league-section" class="hover:text-orange-400 transition duration-300 font-semibold rounded-md p-2">Champions League</a></li>
-                <li><a href="#transfers-section" class="hover:text-orange-400 transition duration-300 font-semibold rounded-md p-2">Transfers</a></li>
-                <li><a href="#opinion-section" class="hover:text-orange-400 transition duration-300 font-semibold rounded-md p-2">Opinion</a></li>
-                <!-- Removed Contact Us link -->
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Main Content Area -->
-    <main class="container mx-auto my-6 p-4 flex flex-col lg:flex-row gap-6 flex-grow">
-
-        <!-- Left Column: Main News/Featured Articles -->
-        <section id="home-section" class="lg:w-2/3 space-y-6">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-orange-500 pb-2">Latest Headlines</h2> <!-- Yellow-orange border -->
-
-            <!-- Featured Article -->
-            <article id="article-haaland" class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row transform transition duration-300 hover:scale-[1.01]">
-                <img src="https://placehold.co/600x400/f97316/ffffff?text=Haaland+Goal" alt="Featured Football Match" class="md:w-1/2 object-cover h-64 md:h-auto"> <!-- Yellow-orange placeholder -->
-                <div class="p-6 md:w-1/2">
-                    <span class="text-sm text-gray-500">June 11, 2025</span>
-                    <h3 class="text-2xl font-bold text-gray-900 mt-2">Haaland's Hat-trick Secures Crucial Win for City in Title Race</h3>
-                    <p class="text-gray-700 mt-3 leading-relaxed">Erling Haaland was in sensational form, bagging three goals to push Manchester City closer to the Premier League title. A dramatic encounter saw moments of brilliance and tension...</p>
-                    <a href="#" class="inline-block mt-4 text-orange-600 hover:text-orange-800 font-semibold transition duration-300">Read More &rarr;</a> <!-- Yellow-orange link -->
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Unlock Your Potential with MATSULLIN's Digital Creations</h1>
+                <p>From essential tools to captivating art, discover digital goods designed for everyone.</p>
+                <div class="hero-ctas">
+                    <a href="shop.html" class="btn primary">Explore Paid Downloads</a>
+                    <a href="free-downloads.html" class="btn secondary">Discover Free Downloads</a>
                 </div>
-            </article>
-
-            <!-- News Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- News Article 1 -->
-                <article id="article-mbappe" class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-[1.01]">
-                    <img src="https://placehold.co/400x250/2563eb/ffffff?text=Mbappe+Transfer" alt="Player Transfer" class="w-full h-48 object-cover"> <!-- Blue placeholder -->
-                    <div class="p-4">
-                        <span class="text-sm text-gray-500">June 10, 2025</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Mbappe Saga Continues: PSG Stance Firm Amid Real Madrid Interest</h3>
-                        <p class="text-gray-700 mt-2">The future of Kylian Mbappe remains uncertain as Paris Saint-Germain are reportedly holding firm on their valuation...</p>
-                        <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-                    </div>
-                </article>
-
-                <!-- News Article 2 -->
-                <article id="article-tuchel" class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-[1.01]">
-                    <img src="https://placehold.co/400x250/16a34a/ffffff?text=Tuchel+Board" alt="Football Tactics Board" class="w-full h-48 object-cover"> <!-- Green placeholder (for contrast) -->
-                    <div class="p-4">
-                        <span class="text-sm text-gray-500">June 9, 2025</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Tactical Breakdown: How Tuchel Transformed Bayern's Midfield</h3>
-                        <p class="text-gray-700 mt-2">An in-depth look at the tactical adjustments made by Thomas Tuchel that led to Bayern Munich's recent surge...</p>
-                        <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-                    </div>
-                </article>
-
-                <!-- News Article 3 -->
-                <article id="article-ghana" class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-[1.01]">
-                    <img src="https://placehold.co/400x250/9333ea/ffffff?text=Ghana+Team" alt="National Football Team" class="w-full h-48 object-cover"> <!-- Purple placeholder (for contrast) -->
-                    <div class="p-4">
-                        <span class="text-sm text-gray-500">June 8, 2025</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Ghana Black Stars Gear Up for Crucial World Cup Qualifiers</h3>
-                        <p class="text-gray-700 mt-2">The Black Stars are intensifying preparations for their upcoming World Cup qualifiers, with key players returning from injury...</p>
-                        <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-                    </div>
-                </article>
-
-                <!-- News Article 4 -->
-                <article id="article-juventus" class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-[1.01]">
-                    <img src="https://placehold.co/400x250/dc2626/ffffff?text=Juventus+Match" alt="Italian Football Match" class="w-full h-48 object-cover"> <!-- Red placeholder (for contrast) -->
-                    <div class="p-4">
-                        <span class="text-sm text-gray-500">June 7, 2025</span>
-                        <h3 class="text-xl font-bold text-gray-900 mt-2">Juventus Secure Champions League Spot After Thrilling Finale</h3>
-                        <p class="text-gray-700 mt-2">A dramatic last day in Serie A saw Juventus clinch a top-four finish, while AC Milan missed out...</p>
-                        <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-                    </div>
-                </article>
             </div>
         </section>
 
-        <!-- Right Column: Sidebar (Live Scores, Trending, etc.) -->
-        <aside class="lg:w-1/3 space-y-6">
-            <!-- Live Scores Section -->
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-blue-600 pb-2">Live Scores</h3> <!-- Blue border for consistency -->
-                <ul class="space-y-4">
-                    <!-- Live Match 1 -->
-                    <li class="flex justify-between items-center bg-gray-50 p-3 rounded-md">
-                        <div>
-                            <p class="font-semibold text-gray-700">Man Utd vs. Arsenal</p>
-                            <p class="text-sm text-blue-600 font-medium">Premier League | 75'</p>
-                        </div>
-                        <div class="flex items-center space-x-2 text-xl font-bold text-gray-900">
-                            <span>1</span>
-                            <span>-</span>
-                            <span>2</span>
-                            <span class="text-red-500 text-sm">(Live)</span>
-                        </div>
-                    </li>
-                    <!-- Live Match 2 -->
-                    <li class="flex justify-between items-center bg-gray-50 p-3 rounded-md">
-                        <div>
-                            <p class="font-semibold text-gray-700">Bayern Munich vs. Dortmund</p>
-                            <p class="text-sm text-blue-600 font-medium">Bundesliga | Halftime</p>
-                        </div>
-                        <div class="flex items-center space-x-2 text-xl font-bold text-gray-900">
-                            <span>0</span>
-                            <span>-</span>
-                            <span>0</span>
-                            <span class="text-green-500 text-sm">(HT)</span>
-                        </div>
-                    </li>
-                    <!-- Upcoming Match -->
-                    <li class="flex justify-between items-center bg-gray-50 p-3 rounded-md">
-                        <div>
-                            <p class="font-semibold text-gray-700">PSG vs. Lyon</p>
-                            <p class="text-sm text-gray-500">Ligue 1 | 8:00 PM GMT</p>
-                        </div>
-                        <div class="text-gray-400 text-sm">Upcoming</div>
-                    </li>
-                </ul>
-                <a href="#" class="block text-center mt-5 text-orange-600 hover:text-orange-800 font-semibold transition duration-300">View All Scores & Fixtures &rarr;</a> <!-- Yellow-orange link -->
+        <section class="featured-products">
+            <div class="container">
+                <h2>Featured Paid Downloads</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="images/product1.jpg" alt="Product Name 1">
+                        <h3>Digital Art Pack Vol. 1</h3>
+                        <p class="price">GH₵ 49.99</p>
+                        <button class="btn add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product2.jpg" alt="Product Name 2">
+                        <h3>Ebook: Digital Marketing Guide</h3>
+                        <p class="price">GH₵ 79.99</p>
+                        <button class="btn add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product3.jpg" alt="Product Name 3">
+                        <h3>UI/UX Design Template Kit</h3>
+                        <p class="price">GH₵ 129.99</p>
+                        <button class="btn add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="shop.html" class="btn outline">View All Paid Downloads</a>
+                </div>
             </div>
+        </section>
 
-            <!-- Trending Topics Section -->
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4 border-b-2 border-orange-500 pb-2">Trending Topics</h3> <!-- Yellow-orange border -->
-                <ul class="space-y-3">
-                    <li><a href="#" class="text-gray-700 hover:text-orange-700 font-medium transition duration-300 rounded-md p-1 block">#TransferWindow2025</a></li> <!-- Yellow-orange hover -->
-                    <li><a href="#" class="text-gray-700 hover:text-orange-700 font-medium transition duration-300 rounded-md p-1 block">#UCLFinalAnalysis</a></li>
-                    <li><a href="#" class="text-gray-700 hover:text-orange-700 font-medium transition duration-300 rounded-md p-1 block">#EuroQualifiers</a></li>
-                    <li><a href="#" class="text-gray-700 hover:text-orange-700 font-medium transition duration-300 rounded-md p-1 block">#MessiContract</a></li>
-                    <li><a href="#" class="text-gray-700 hover:text-orange-700 font-medium transition duration-300 rounded-md p-1 block">#NextManager</a></li>
-                </ul>
+        <section class="featured-free-downloads">
+            <div class="container">
+                <h2>Featured Free Downloads</h2>
+                <div class="download-grid">
+                    <div class="download-card">
+                        <img src="images/free-download1.jpg" alt="Free Download 1">
+                        <h3>Free Icon Set</h3>
+                        <p>High-quality icons for your projects.</p>
+                        <a href="download-detail.html" class="btn download-now">Download Now</a>
+                    </div>
+                    <div class="download-card">
+                        <img src="images/free-download2.jpg" alt="Free Download 2">
+                        <h3>Desktop Wallpaper Pack</h3>
+                        <p>Vibrant wallpapers to personalize your screen.</p>
+                        <a href="download-detail.html" class="btn download-now">Download Now</a>
+                    </div>
+                    <div class="download-card">
+                        <img src="images/free-download3.jpg" alt="Free Download 3">
+                        <h3>Intro to Coding Ebook (PDF)</h3>
+                        <p>Your first steps into the world of programming.</p>
+                        <a href="download-detail.html" class="btn download-now">Download Now</a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="free-downloads.html" class="btn outline">Browse All Free Downloads</a>
+                </div>
             </div>
-        </aside>
+        </section>
 
+        <section class="why-matsullin">
+            <div class="container">
+                <h2>Why Choose MATSULLIN?</h2>
+                <div class="value-props">
+                    <div class="value-prop-item">
+                        <img src="images/icon-instant.png" alt="Instant Access Icon">
+                        <h3>Instant Access</h3>
+                        <p>Get your digital products immediately after purchase. No waiting, just downloading.</p>
+                    </div>
+                    <div class="value-prop-item">
+                        <img src="images/icon-quality.png" alt="Quality Icon">
+                        <h3>Quality & Creativity</h3>
+                        <p>We offer hand-picked or uniquely crafted digital goods for exceptional value.</p>
+                    </div>
+                    <div class="value-prop-item">
+                        <img src="images/icon-secure.png" alt="Secure Payment Icon">
+                        <h3>Secure Payments</h3>
+                        <p>Enjoy easy and safe transactions with trusted Ghanaian payment solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- New Sections for Navigation Tabs -->
-    <section id="premier-league-section" class="container mx-auto my-12 p-4 bg-white rounded-xl shadow-lg">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-orange-500 pb-2">Premier League News</h2> <!-- Yellow-orange border -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article id="article-arsenal-winner" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="https://placehold.co/400x220/f97316/ffffff?text=Arsenal+Match" alt="Arsenal Match" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Yellow-orange placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">Arsenal's Title Hopes Boosted by Late Winner</h3>
-                <p class="text-gray-700 text-sm mt-2">A stoppage-time goal secured a vital three points for Arsenal as they chase the Premier League title...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-            <article id="article-salah-injury" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="https://placehold.co/400x220/2563eb/ffffff?text=Salah+Injury" alt="Liverpool Player" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Blue placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">Salah's Injury Scare Ahead of Crucial Fixtures</h3>
-                <p class="text-gray-700 text-sm mt-2">Concerns grow at Anfield as Mohamed Salah reportedly picked up a knock during training...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-            <article id="article-ten-hag-tactics" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="https://placehold.co/400x220/16a34a/ffffff?text=Ten+Hag+Tactics" alt="Manchester United Tactics" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Green placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">Ten Hag's Tactical Masterclass Silences Critics</h3>
-                <p class="text-gray-700 text-sm mt-2">An unexpected formation change paid dividends for Manchester United in their recent victory...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-        </div>
-    </section>
-
-    <section id="la-liga-section" class="container mx-auto my-12 p-4 bg-white rounded-xl shadow-lg">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-orange-500 pb-2">La Liga News</h2> <!-- Yellow-orange border -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article id="article-real-madrid-champions" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="https://placehold.co/400x220/f97316/ffffff?text=Real+Madrid+Celebration" alt="Real Madrid Celebration" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Yellow-orange placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">Real Madrid Crowned La Liga Champions!</h3>
-                <p class="text-gray-700 text-sm mt-2">Another dominant season sees Real Madrid secure their 36th La Liga title with games to spare...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-            <article id="article-barcelona-youngsters" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="https://placehold.co/400x220/2563eb/ffffff?text=Barcelona+Youth" alt="Barcelona Player" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Blue placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">Barcelona's Young Stars Shine Bright in Derby Win</h3>
-                <p class="text-gray-700 text-sm mt-2">The future looks promising for Barcelona as their academy graduates impress in a crucial derby fixture...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-            <article id="article-simeone-future" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="https://placehold.co/400x220/16a34a/ffffff?text=Simeone+Future" alt="Atletico Madrid Coach" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Green placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">Simeone's Future at Atletico Under Scrutiny</h3>
-                <p class="text-gray-700 text-sm mt-2">Reports suggest Diego Simeone's long tenure at Atletico Madrid could be nearing its end...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-        </div>
-    </section>
-
-    <section id="champions-league-section" class="container mx-auto my-12 p-4 bg-white rounded-xl shadow-lg">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-orange-500 pb-2">Champions League Updates</h2> <!-- Yellow-orange border -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article id="article-ucl-draw" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="https://placehold.co/400x220/f97316/ffffff?text=UCL+Draw" alt="Champions League Trophy" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Yellow-orange placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">Road to Wembley: Quarter-Final Draw Analysis</h3>
-                <p class="text-gray-700 text-sm mt-2">A look at the matchups from the highly anticipated Champions League quarter-final draw...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-            <article id="article-bayern-ucl" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="https://placehold.co/400x220/2563eb/ffffff?text=Bayern+Victory" alt="Bayern Munich UCL" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Blue placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">Barcelona captain addresses contract renewal, UCL defeat, Yamal, Ballon d’Or – ‘My intention is to…’</h3>
-                <p class="text-gray-700 text-sm mt-2">Recent reports indicate that Barcelona captain Frenkie de Jong has been quite open about several key topics surrounding the club and his personal future.
-
-Regarding his contract renewal, De Jong stated, "I think I'm going to renew for Barça." He added a note of caution, saying, "My intention is to renew this summer, but we will see what happens. I can't be one hundred percent sure, but if everything goes well, it will be done. It is a negotiation and you can't say exactly when. The important thing is that both parties want it, and I think we will reach an agreement." This suggests a strong desire from both the player and the club to continue their relationship.
-
-On the Champions League defeat, specifically against Inter Milan, De Jong admitted, "It hurt a lot to lose against Inter. We were so close to the final and failing like that was painful. PSG deserved the title this year." This indicates the disappointment felt within the squad after their European exit.
-
-When asked about the young sensation Lamine Yamal, De Jong expressed his admiration and supported his Ballon d'Or candidacy. He commented, "That trophy isn't decided by just one match or a title. It's about the full season. There's no doubt that Lamine is a special talent and deserves recognition." This highlights the high regard in which Yamal is held by his teammates.</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-            <article id="article-inter-ucl" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="https://placehold.co/400x220/16a34a/ffffff?text=Inter+Surprise" alt="Inter Milan UCL" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Green placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">PSG president takes clear swipe at Real Madrid star after UCL success – ‘We were lucky without him’</h3>
-                <p class="text-gray-700 text-sm mt-2">After PSG's recent Champions League success, their president, Nasser Al-Khelaifi, made comments that have been widely interpreted as a dig at former star Kylian Mbappé, who recently joined Real Madrid.
-
-Al-Khelaifi reportedly stated, "We were lucky this year without him, but I wish him the best for the future with Real Madrid, as long as he doesn't face Paris Saint-Germain." He also added, "I don't have any regrets [about Mbappé leaving]," and thanked Mbappé along with other former PSG stars like Messi, Neymar, and Zlatan Ibrahimovic for their contributions to the club.
-
-These remarks come after PSG finally won the Champions League this season, a trophy that eluded them during Mbappé's seven years at the club. The timing and nature of Al-Khelaifi's statements suggest a veiled jab at Mbappé, especially considering the well-publicized friction between the player and the club in the lead-up to his departure.
-
-Al-Khelaifi also took aim at those who refer to Ligue 1 as a "farmer's league," highlighting PSG's Champions League victories over four English teams this season.</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-        </div>
-    </section>
-
-    <section id="transfers-section" class="container mx-auto my-12 p-4 bg-white rounded-xl shadow-lg">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-orange-500 pb-2">Transfer News & Rumours</h2> <!-- Yellow-orange border -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article id="article-chelsea-signing" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="chelsea.jpg" alt="Player Signing" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Yellow-orange placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">Official: Star Midfielder Joins Chelsea on Five-Year Deal</h3>
-                <p class="text-gray-700 text-sm mt-2">Chelsea confirm the signing of highly-rated midfielder from Benfica for a record fee...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-            <article id="article-arsenal-winger" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="arsenal.jpg" alt="Rumour Mill" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Blue placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">Arsenal Target Brazilian Winger in Summer Window</h3>
-                <p class="text-gray-700 text-sm mt-2">The Gunners are reportedly keen on bringing in a dynamic winger from the Brazilian top flight...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-            <article id="article-de-jong" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="de Jong bar.jpg" alt="Contract Talks" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Green placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">De Jong's Barcelona Future Remains Unclear</h3>
-                <p class="text-gray-700 text-sm mt-2">Despite recent talks, Frenkie de Jong's contract situation at Barcelona is still unresolved...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-        </div>
-    </section>
-
-    <section id="opinion-section" class="container mx-auto my-12 p-4 bg-white rounded-xl shadow-lg">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-orange-500 pb-2">Opinion & Analysis</h2> <!-- Yellow-orange border -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article id="article-var" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="VAR.jpg" alt="Pundit Analysis" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Yellow-orange placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">Why VAR is Still Hurting the Beautiful Game</h3>
-                <p class="text-gray-700 text-sm mt-2">An opinion piece discussing the ongoing controversies and impact of Video Assistant Referee...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-            <article id="article-false-nine" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="FASE 9.jpg" alt="Tactical Board" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Blue placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">The Rise of the False Nine: A Tactical Revolution?</h3>
-                <p class="text-gray-700 text-sm mt-2">An in-depth analysis of how the false nine role is evolving in modern football...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-            <article id="article-youth-success" class="bg-gray-50 rounded-lg shadow-md p-4 transition duration-300 hover:shadow-xl">
-                <img src="INVEST IN YOUTH.jpg" alt="Player Development" class="w-full h-40 object-cover rounded-md mb-4"> <!-- Green placeholder -->
-                <h3 class="text-xl font-semibold text-gray-900">Investing in Youth: The Key to Sustained Success</h3>
-                <p class="text-gray-700 text-sm mt-2">Argues for the importance of youth academy development for long-term club prosperity...</p>
-                <a href="#" class="inline-block mt-3 text-orange-600 hover:text-orange-800 font-semibold">Read More &rarr;</a> <!-- Yellow-orange link -->
-            </article>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="bg-blue-950 text-white p-6 mt-8 shadow-inner"> <!-- Dark Blue -->
-        <div class="container mx-auto text-center text-blue-200 text-sm"> <!-- Lighter blue for contrast -->
-            <p>&copy; 2025 MC Sport. All rights reserved.</p>
-            <div class="flex justify-center space-x-4 mt-3">
-                <a href="#" class="hover:text-orange-400 transition duration-300">Privacy Policy</a> <!-- Yellow-orange hover -->
-                <a href="#" class="hover:text-orange-400 transition duration-300">Terms of Service</a> <!-- Yellow-orange hover -->
-                <a href="#" class="hover:text-orange-400 transition duration-300">About Us</a> <!-- Yellow-orange hover -->
+    <footer>
+        <div class="container">
+            <div class="footer-col">
+                <h3>MATSULLIN</h3>
+                <p>Your premier destination for digital downloads, offering both premium and free resources.</p>
             </div>
-            <div class="mt-4 flex justify-center space-x-4">
-                <a href="#" class="text-blue-300 hover:text-orange-400 transition duration-300"> <!-- Yellow-orange hover -->
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.11 4.11 0 001.816-2.26c-.83.488-1.764.852-2.75 1.047a4.09 4.09 0 00-6.965 3.743 11.65 11.65 0 01-8.457-4.287 4.09 4.09 0 001.278 5.473c-.648-.02-1.25-.198-1.77-.417a4.09 4.09 0 003.295 4.018 4.21 4.21 0 01-1.853.07 4.10 4.10 0 003.834 2.85A8.25 8.25 0 012 18.251c-.552 0-1.072-.03-1.58-.093a11.61 11.61 0 008.28 2.093"></path></svg>
-                </a>
-                <a href="#" class="text-blue-300 hover:text-orange-400 transition duration-300"> <!-- Yellow-orange hover -->
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.776-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10z" clip-rule="evenodd"></path></svg>
-                </a>
-                <a href="#" class="text-blue-300 hover:text-orange-400 transition duration-300"> <!-- Yellow-orange hover -->
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 4c-2.732 0-3.056.012-4.12.06c-1.064.048-1.78.264-2.428.514C4.156 4.962 3.654 5.464 3.152 5.966c-.502.502-.99 1.15-1.286 1.956-.25.648-.466 1.364-.514 2.428C2.012 10.944 2 11.268 2 12s.012 1.056.06 2.12c.048 1.064.264 1.78.514 2.428.296.806.798 1.308 1.286 1.808.502.502 1.15.99 1.956 1.286.648.25 1.364.466 2.428.514 1.064.048 1.388.06 2.12.06s1.056-.012 2.12-.06c1.064-.048 1.78-.264 2.428-.514.806-.296 1.308-.798 1.808-1.286.502-.502.99-1.15 1.286-1.956.25-.648.466-1.364.514-2.428.048-1.064.06-1.388.06-2.12s-.012-1.056-.06-2.12c-.048-1.064-.264-1.78-.514-2.428-.296-.806-.798-1.308-1.286-1.808-.502-.502-1.15-.99-1.956-1.286-.648-.25-1.364-.466-2.428-.514C13.056 4.012 12.732 4 12 4zm0 2.16c2.613 0 2.91
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="free-downloads.html">Free Downloads</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="refund.html">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Connect With Us</h3>
+                <p>Email: info@matsullin.com</p>
+                <div class="social-icons">
+                    <a href="#" target="_blank">FB</a>
+                    <a href="#" target="_blank">IG</a>
+                    <a href="#" target="_blank">X</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 MATSULLIN. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
