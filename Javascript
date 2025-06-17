@@ -1,0 +1,27 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // This is where you would add JavaScript for interactive elements.
+    // Examples:
+    // - Dynamically update cart count
+    // - Image sliders
+    // - Form validation
+    // - Add to cart functionality (client-side visual feedback)
+
+    console.log('MATSULLIN website loaded!');
+
+    // Example: Update cart count (this would be integrated with a backend later)
+    const cartCountSpan = document.getElementById('cart-count');
+    let currentCartCount = 0; // This would come from session storage or backend
+    cartCountSpan.textContent = currentCartCount;
+
+    // Example: Simple "Add to Cart" button feedback
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Item added to cart! (This is a placeholder message)');
+            // In a real application, you would:
+            // 1. Send an AJAX request to your backend to add the item to the cart.
+            // 2. Update the cart count dynamically without a full page reload.
+            // currentCartCount++;
+            // cartCountSpan.textContent = currentCartCount;
+        });
+    });
+});
