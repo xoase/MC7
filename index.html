@@ -1,169 +1,144 @@
-
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MATSULLIN - Your Hub for Digital Creations</title>
+    <title>[Your Gallery Name] - Home of Digital Art</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
+
     <header>
-        <div class="container">
+        <div class="container header-flex">
             <div class="logo">
-                <a href="index.html">MATSULLIN</a>
+                <a href="index.html">
+                    <h1>[Your Gallery Name]</h1>
+                </a>
             </div>
-            <nav>
-                <ul>
+            <nav class="main-nav">
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span></span>
+                </label>
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="free-downloads.html">Free Downloads</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li><a href="artists.html">Artists</a></li>
+                    <li><a href="collection.html">Collection</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="news.html">News & Insights</a></li>
                 </ul>
             </nav>
-            <div class="header-icons">
-                <a href="my-account.html">Account</a>
-                <a href="cart.html" class="cart-icon">Cart (<span id="cart-count">0</span>)</a>
-                <input type="text" placeholder="Search...">
-            </div>
         </div>
     </header>
 
     <main>
-        <section class="hero-section">
-            <div class="container">
-                <h1>Unlock Your Potential with MATSULLIN's Digital Creations</h1>
-                <p>From essential tools to captivating art, discover digital goods designed for everyone.</p>
-                <div class="hero-ctas">
-                    <a href="shop.html" class="btn primary">Explore Paid Downloads</a>
-                    <a href="free-downloads.html" class="btn secondary">Discover Free Downloads</a>
-                </div>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h2>Experience the Future of Art</h2>
+                <p>Immerse yourself in groundbreaking digital masterpieces from visionary artists.</p>
+                <a href="exhibitions.html" class="button primary">Explore Current Exhibitions</a>
+            </div>
+            <div class="hero-background">
+                <img src="images/hero-placeholder.jpg" alt="Featured Digital Art">
             </div>
         </section>
 
-        <section class="featured-products">
+        <section id="current-exhibitions-highlight" class="section-padded">
             <div class="container">
-                <h2>Featured Paid Downloads</h2>
-                <div class="product-grid">
-                    <div class="product-card">
-                        <img src="images/product1.jpg" alt="Product Name 1">
-                        <h3>Digital Art Pack Vol. 1</h3>
-                        <p class="price">GH₵ 49.99</p>
-                        <button class="btn add-to-cart">Add to Cart</button>
+                <h2>Now Showing</h2>
+                <div class="exhibition-grid">
+                    <div class="exhibition-card">
+                        <img src="images/exhibit-thumb-1.jpg" alt="Exhibition Title 1">
+                        <h3><a href="exhibition-detail-1.html">The Algorithmic Canvas</a></h3>
+                        <p>Discover the beauty of generative art.</p>
+                        <a href="exhibition-detail-1.html" class="button secondary">View Exhibition</a>
                     </div>
-                    <div class="product-card">
-                        <img src="images/product2.jpg" alt="Product Name 2">
-                        <h3>Ebook: Digital Marketing Guide</h3>
-                        <p class="price">GH₵ 79.99</p>
-                        <button class="btn add-to-cart">Add to Cart</button>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/product3.jpg" alt="Product Name 3">
-                        <h3>UI/UX Design Template Kit</h3>
-                        <p class="price">GH₵ 129.99</p>
-                        <button class="btn add-to-cart">Add to Cart</button>
+                    <div class="exhibition-card">
+                        <img src="images/exhibit-thumb-2.jpg" alt="Exhibition Title 2">
+                        <h3><a href="exhibition-detail-2.html">NFT Narratives</a></h3>
+                        <p>Stories encoded on the blockchain.</p>
+                        <a href="exhibition-detail-2.html" class="button secondary">View Exhibition</a>
                     </div>
                 </div>
                 <div class="text-center">
-                    <a href="shop.html" class="btn outline">View All Paid Downloads</a>
+                    <a href="exhibitions.html" class="button primary">See All Exhibitions</a>
                 </div>
             </div>
         </section>
 
-        <section class="featured-free-downloads">
+        <section id="featured-artists-highlight" class="section-padded bg-light">
             <div class="container">
-                <h2>Featured Free Downloads</h2>
-                <div class="download-grid">
-                    <div class="download-card">
-                        <img src="images/free-download1.jpg" alt="Free Download 1">
-                        <h3>Free Icon Set</h3>
-                        <p>High-quality icons for your projects.</p>
-                        <a href="download-detail.html" class="btn download-now">Download Now</a>
+                <h2>Featured Visionaries</h2>
+                <div class="artist-grid">
+                    <div class="artist-card">
+                        <img src="images/artist-avatar-1.jpg" alt="Artist Name 1">
+                        <h3><a href="artist-detail-1.html">A.I. Maestro</a></h3>
+                        <p>Generative Art Specialist</p>
                     </div>
-                    <div class="download-card">
-                        <img src="images/free-download2.jpg" alt="Free Download 2">
-                        <h3>Desktop Wallpaper Pack</h3>
-                        <p>Vibrant wallpapers to personalize your screen.</p>
-                        <a href="download-detail.html" class="btn download-now">Download Now</a>
-                    </div>
-                    <div class="download-card">
-                        <img src="images/free-download3.jpg" alt="Free Download 3">
-                        <h3>Intro to Coding Ebook (PDF)</h3>
-                        <p>Your first steps into the world of programming.</p>
-                        <a href="download-detail.html" class="btn download-now">Download Now</a>
+                    <div class="artist-card">
+                        <img src="images/artist-avatar-2.jpg" alt="Artist Name 2">
+                        <h3><a href="artist-detail-2.html">Pixel Prophet</a></h3>
+                        <p>Immersive 3D Environments</p>
                     </div>
                 </div>
                 <div class="text-center">
-                    <a href="free-downloads.html" class="btn outline">Browse All Free Downloads</a>
+                    <a href="artists.html" class="button primary">Discover All Artists</a>
                 </div>
             </div>
         </section>
 
-        <section class="why-matsullin">
-            <div class="container">
-                <h2>Why Choose MATSULLIN?</h2>
-                <div class="value-props">
-                    <div class="value-prop-item">
-                        <img src="images/icon-instant.png" alt="Instant Access Icon">
-                        <h3>Instant Access</h3>
-                        <p>Get your digital products immediately after purchase. No waiting, just downloading.</p>
-                    </div>
-                    <div class="value-prop-item">
-                        <img src="images/icon-quality.png" alt="Quality Icon">
-                        <h3>Quality & Creativity</h3>
-                        <p>We offer hand-picked or uniquely crafted digital goods for exceptional value.</p>
-                    </div>
-                    <div class="value-prop-item">
-                        <img src="images/icon-secure.png" alt="Secure Payment Icon">
-                        <h3>Secure Payments</h3>
-                        <p>Enjoy easy and safe transactions with trusted Ghanaian payment solutions.</p>
-                    </div>
-                </div>
+        <section id="cta-newsletter" class="section-padded cta-banner">
+            <div class="container text-center">
+                <h2>Stay Connected with Digital Art</h2>
+                <p>Be the first to know about new exhibitions, artist drops, and virtual events.</p>
+                <form action="#" method="POST" class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="button primary">Subscribe</button>
+                </form>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <div class="footer-col">
-                <h3>MATSULLIN</h3>
-                <p>Your premier destination for digital downloads, offering both premium and free resources.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="free-downloads.html">Free Downloads</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                    <li><a href="refund.html">Refund Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Connect With Us</h3>
-                <p>Email: info@matsullin.com</p>
-                <div class="social-icons">
-                    <a href="#" target="_blank">FB</a>
-                    <a href="#" target="_blank">IG</a>
-                    <a href="#" target="_blank">X</a>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>[Your Gallery Name]</h3>
+                    <p>Pioneering the future of digital art.</p>
+                    <div class="social-links">
+                        <a href="#"><img src="images/icon-instagram.png" alt="Instagram"></a>
+                        <a href="#"><img src="images/icon-twitter.png" alt="Twitter"></a>
+                        <a href="#"><img src="images/icon-discord.png" alt="Discord"></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="exhibitions.html">Exhibitions</a></li>
+                        <li><a href="artists.html">Artists</a></li>
+                        <li><a href="collection.html">Collection</a></li>
+                        <li><a href="news.html">News & Insights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 MATSULLIN. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 [Your Gallery Name]. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
-</html>
+    </html>
