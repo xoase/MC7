@@ -3,419 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your Gallery Name] - Home of Digital Art</title>
+    <title>[Your Gallery Name] - Exhibitions</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
     <style>
-        /* General Body & Typography */
-        body {
-            font-family: 'Arial', sans-serif; /* You can replace with Google Fonts like 'Montserrat', 'Open Sans', etc. */
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4; /* Light background for the whole site */
-            -webkit-font-smoothing: antialiased; /* Smoother fonts for webkit browsers */
-            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-        }
+        /* All the CSS from your index.html's <style> tag goes here */
+        /* Copy and paste the entire <style> block content from your index.html here */
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Georgia', serif; /* Or a modern sans-serif like 'Roboto Condensed' */
-            color: #222;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-
-        h1 { font-size: 2.8em; }
-        h2 { font-size: 2.2em; }
-        h3 { font-size: 1.8em; }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        a {
-            color: #007bff; /* Primary link color */
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #0056b3; /* Darker on hover */
-            text-decoration: underline;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .section-padded {
-            padding: 60px 0; /* Add vertical padding to sections */
-        }
-
-        .bg-light {
-            background-color: #e9e9e9;
-        }
-
-        /* --- Header & Navigation --- */
-        header {
-            background-color: #0d0d0d; /* Dark, sleek header */
-            color: #fff;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky; /* Makes header stick to top on scroll */
-            top: 0;
-            z-index: 1000; /* Ensures header stays on top of other content */
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo h1 {
-            margin: 0;
-            font-size: 1.8em;
-        }
-
-        .logo a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex; /* Makes nav items horizontal */
-        }
-
-        nav ul li {
-            margin-left: 25px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            font-weight: bold;
-            font-size: 1.1em;
-            padding: 5px 0;
-            position: relative;
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0%;
-            height: 2px;
-            display: block;
-            margin-top: 5px;
-            right: 0;
-            background: #007bff; /* Underline color */
-            transition: width 0.3s ease;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
-            left: 0;
-            background: #007bff;
-        }
-
-
-        /* --- Hero Section --- */
-        .hero-section {
-            position: relative;
-            height: 600px; /* Adjust as needed */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
-            overflow: hidden; /* To contain background image */
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('images/hero-placeholder.jpg') no-repeat center center/cover; /* Placeholder image */
-            filter: brightness(0.5); /* Darken background for text readability */
-            z-index: 1;
-            transition: background-image 1s ease-in-out; /* For JS image cycling */
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 20px;
-            background: rgba(0,0,0,0.4); /* Semi-transparent overlay for text */
-            border-radius: 8px;
-        }
-
-        .hero-content h2 {
-            font-size: 3.5em;
-            margin-bottom: 15px;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-content p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            color: #eee;
-        }
-
-        /* --- Buttons --- */
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .button.primary {
-            background-color: #007bff;
-            color: #fff;
-        }
-
-        .button.primary:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,123,255,0.3);
-            text-decoration: none;
-        }
-
-        .button.secondary {
-            background-color: #6c757d;
-            color: #fff;
-        }
-
-        .button.secondary:hover {
-            background-color: #5a6268;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(108,117,125,0.3);
-            text-decoration: none;
-        }
-
-        /* --- Grid Layouts (Exhibitions & Artists) --- */
-        .exhibition-grid, .artist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
-            gap: 30px;
-            margin-top: 40px;
-            margin-bottom: 40px;
-        }
-
-        .exhibition-card, .artist-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .exhibition-card:hover, .artist-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        .exhibition-card img, .artist-card img {
-            width: 100%;
-            height: 220px; /* Fixed height for consistent cards */
-            object-fit: cover; /* Ensures images cover the area without distortion */
-            display: block;
-        }
-
-        .exhibition-card h3, .artist-card h3 {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.4em;
-            padding: 0 15px;
-        }
-
-        .exhibition-card p, .artist-card p {
-            font-size: 0.95em;
-            color: #666;
-            padding: 0 15px 15px;
-        }
-
-        .exhibition-card .button {
-            margin-bottom: 20px;
-        }
-
-        /* --- Newsletter / CTA Banner --- */
-        .cta-banner {
-            background-color: #222; /* Dark background for CTA */
+        /* You can add page-specific CSS here if needed */
+        .page-header {
+            background-color: #333;
             color: #fff;
             padding: 80px 0;
             text-align: center;
-        }
-
-        .cta-banner h2 {
-            color: #fff;
-            font-size: 2.5em;
-        }
-
-        .cta-banner p {
-            font-size: 1.1em;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
-        }
-
-        .newsletter-form input[type="email"] {
-            padding: 12px 20px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1em;
-            width: 300px; /* Fixed width, will become fluid on small screens */
-            max-width: 80%; /* Ensures it doesn't overflow on small screens */
-        }
-
-        .newsletter-form button {
-            padding: 12px 30px;
-            font-size: 1.1em;
-        }
-
-
-        /* --- Footer --- */
-        footer {
-            background-color: #1a1a1a;
-            color: #ddd;
-            padding: 50px 0 20px;
-            font-size: 0.9em;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
             margin-bottom: 40px;
         }
-
-        .footer-col h3 {
+        .page-header h1 {
             color: #fff;
-            margin-bottom: 20px;
-            font-size: 1.3em;
-        }
-
-        .footer-col p {
-            color: #bbb;
-        }
-
-        .footer-col ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-col ul li {
+            font-size: 3em;
             margin-bottom: 10px;
-        }
-
-        .footer-col ul li a {
-            color: #bbb;
-        }
-
-        .footer-col ul li a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        .social-links img {
-            width: 30px;
-            height: 30px;
-            margin-right: 15px;
-            transition: transform 0.2s ease;
-        }
-
-        .social-links img:hover {
-            transform: scale(1.1);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 20px;
-            text-align: center;
-            color: #999;
-        }
-
-        /* --- Responsive Design (Media Queries) --- */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2em; }
-            h2 { font-size: 1.8em; }
-            .hero-content h2 { font-size: 2.5em; }
-            .hero-content p { font-size: 1em; }
-
-            header .container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav ul {
-                flex-direction: column;
-                margin-top: 20px;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .newsletter-form input[type="email"] {
-                width: 100%;
-                max-width: 350px; /* Limit width even for full-width input */
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr; /* Stack columns on small screens */
-                text-align: center;
-            }
-
-            .social-links {
-                justify-content: center;
-                display: flex; /* To center icons */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-section {
-                height: 400px;
-            }
-            .hero-content h2 {
-                font-size: 2em;
-            }
-            .hero-content p {
-                font-size: 0.9em;
-            }
-            .button {
-                padding: 10px 20px;
-                font-size: 0.9em;
-            }
         }
     </style>
 </head>
@@ -426,7 +31,7 @@
             <div class="logo">
                 <a href="index.html">
                     <h1>[Your Gallery Name]</h1>
-                    </a>
+                </a>
             </div>
             <nav>
                 <ul>
@@ -443,56 +48,46 @@
     </header>
 
     <main>
-        <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <h2>Experience the Future of Art</h2>
-                <p>Immerse yourself in groundbreaking digital masterpieces from visionary artists.</p>
-                <a href="exhibitions.html" class="button primary">Explore Current Exhibitions</a>
+        <section class="page-header">
+            <div class="container">
+                <h1>Current & Past Exhibitions</h1>
+                <p>Explore the innovative shows curated by [Your Gallery Name].</p>
             </div>
-            <div class="hero-background"></div>
         </section>
 
-        <section id="current-exhibitions-highlight" class="section-padded">
+        <section id="exhibitions-list" class="section-padded">
             <div class="container">
-                <h2>Now Showing</h2>
+                <h2>Current Exhibitions</h2>
                 <div class="exhibition-grid">
                     <div class="exhibition-card">
-                        <img src="images/exhibit-thumb-1.jpg" alt="Exhibition Title 1">
+                        <img src="images/exhibit-detail-1.jpg" alt="Exhibition Title 1">
                         <h3><a href="exhibition-detail-1.html">The Algorithmic Canvas</a></h3>
-                        <p>Discover the beauty of generative art.</p>
+                        <p>A deep dive into the world of AI-generated art. Currently on view until August 30, 2025.</p>
                         <a href="exhibition-detail-1.html" class="button secondary">View Exhibition</a>
                     </div>
                     <div class="exhibition-card">
-                        <img src="images/exhibit-thumb-2.jpg" alt="Exhibition Title 2">
-                        <h3><a href="exhibition-detail-2.html">NFT Narratives</a></h3>
-                        <p>Stories encoded on the blockchain.</p>
+                        <img src="images/exhibit-detail-2.jpg" alt="Exhibition Title 2">
+                        <h3><a href="exhibition-detail-2.html">NFT Journeys: Beyond the Hype</a></h3>
+                        <p>Explore the narrative power and technological innovation of NFTs. On view until September 15, 2025.</p>
                         <a href="exhibition-detail-2.html" class="button secondary">View Exhibition</a>
                     </div>
                     </div>
-                <div class="text-center">
-                    <a href="exhibitions.html" class="button primary">See All Exhibitions</a>
-                </div>
-            </div>
-        </section>
 
-        <section id="featured-artists-highlight" class="section-padded bg-light">
-            <div class="container">
-                <h2>Featured Visionaries</h2>
-                <div class="artist-grid">
-                    <div class="artist-card">
-                        <img src="images/artist-avatar-1.jpg" alt="Artist Name 1">
-                        <h3><a href="artist-detail-1.html">A.I. Maestro</a></h3>
-                        <p>Generative Art Specialist</p>
+                <h2 style="margin-top: 60px;">Past Exhibitions</h2>
+                <div class="exhibition-grid">
+                    <div class="exhibition-card">
+                        <img src="images/exhibit-past-1.jpg" alt="Past Exhibition 1">
+                        <h3><a href="exhibition-past-1.html">Pixel Perfect: A Retrospective</a></h3>
+                        <p>Celebrating the pioneers of pixel art. Exhibited: Jan - Mar 2024.</p>
+                        <a href="exhibition-past-1.html" class="button secondary">Learn More</a>
                     </div>
-                    <div class="artist-card">
-                        <img src="images/artist-avatar-2.jpg" alt="Artist Name 2">
-                        <h3><a href="artist-detail-2.html">Pixel Prophet</a></h3>
-                        <p>Immersive 3D Environments</p>
+                     <div class="exhibition-card">
+                        <img src="images/exhibit-past-2.jpg" alt="Past Exhibition 2">
+                        <h3><a href="exhibition-past-2.html">Augmented Realities</a></h3>
+                        <p>Exploring AR as a new medium. Exhibited: Apr - Jun 2024.</p>
+                        <a href="exhibition-past-2.html" class="button secondary">Learn More</a>
                     </div>
                     </div>
-                <div class="text-center">
-                    <a href="artists.html" class="button primary">Discover All Artists</a>
-                </div>
             </div>
         </section>
 
@@ -500,11 +95,11 @@
             <div class="container text-center">
                 <h2>Stay Connected with Digital Art</h2>
                 <p>Be the first to know about new exhibitions, artist drops, and virtual events.</p>
-                <form id="newsletter-form" action="#" method="POST" class="newsletter-form">
-                    <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+                <form id="newsletter-form-page" action="#" method="POST" class="newsletter-form">
+                    <input type="email" id="newsletter-email-page" placeholder="Enter your email address" required>
                     <button type="submit" class="button primary">Subscribe</button>
                 </form>
-                <p id="form-message" style="margin-top: 15px;"></p>
+                <p id="form-message-page" style="margin-top: 15px;"></p>
             </div>
         </section>
 
@@ -520,7 +115,7 @@
                         <a href="#" target="_blank"><img src="images/icon-instagram.png" alt="Instagram"></a>
                         <a href="#" target="_blank"><img src="images/icon-twitter.png" alt="Twitter"></a>
                         <a href="#" target="_blank"><img src="images/icon-discord.png" alt="Discord"></a>
-                        </div>
+                    </div>
                 </div>
                 <div class="footer-col">
                     <h3>Explore</h3>
@@ -548,45 +143,48 @@
     </footer>
 
     <script>
-        // JavaScript for Hero Section Image Cycling
+        // Hero Section Image Cycling - This script is only relevant for the homepage (index.html)
+        // You can remove this specific part from other pages if they don't have a hero slider
         document.addEventListener('DOMContentLoaded', () => {
             const heroBackground = document.querySelector('.hero-background');
-            const images = [
-                'images/hero-placeholder.jpg',
-                'images/digital-art-1.jpg', // Replace with your actual digital art images
-                'images/digital-art-2.jpg',
-                'images/digital-art-3.jpg'
-            ];
-            let currentImageIndex = 0;
+            // Check if heroBackground exists before trying to manipulate it
+            if (heroBackground) {
+                const images = [
+                    'images/hero-placeholder.jpg',
+                    'images/digital-art-1.jpg', // Replace with your actual digital art images
+                    'images/digital-art-2.jpg',
+                    'images/digital-art-3.jpg'
+                ];
+                let currentImageIndex = 0;
 
-            function changeHeroImage() {
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                heroBackground.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+                function changeHeroImage() {
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                    heroBackground.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+                }
+                setInterval(changeHeroImage, 5000);
             }
 
-            // Change image every 5 seconds (5000 milliseconds)
-            setInterval(changeHeroImage, 5000);
+            // Newsletter Form Submission (Client-Side) - Apply this to all pages with the form
+            const newsletterForm = document.getElementById('newsletter-form') || document.getElementById('newsletter-form-page');
+            const newsletterEmail = document.getElementById('newsletter-email') || document.getElementById('newsletter-email-page');
+            const formMessage = document.getElementById('form-message') || document.getElementById('form-message-page');
 
-            // Newsletter Form Submission (Client-Side)
-            const newsletterForm = document.getElementById('newsletter-form');
-            const newsletterEmail = document.getElementById('newsletter-email');
-            const formMessage = document.getElementById('form-message');
+            if (newsletterForm && newsletterEmail && formMessage) {
+                newsletterForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
 
-            newsletterForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
+                    const email = newsletterEmail.value;
 
-                const email = newsletterEmail.value;
-
-                // Basic email validation
-                if (email && email.includes('@') && email.includes('.')) {
-                    formMessage.textContent = `Thank you for subscribing, ${email}!`;
-                    formMessage.style.color = 'green';
-                    newsletterEmail.value = ''; // Clear the input
-                } else {
-                    formMessage.textContent = 'Please enter a valid email address.';
-                    formMessage.style.color = 'red';
-                }
-            });
+                    if (email && email.includes('@') && email.includes('.')) {
+                        formMessage.textContent = `Thank you for subscribing, ${email}!`;
+                        formMessage.style.color = 'green';
+                        newsletterEmail.value = '';
+                    } else {
+                        formMessage.textContent = 'Please enter a valid email address.';
+                        formMessage.style.color = 'red';
+                    }
+                });
+            }
         });
     </script>
 </body>
